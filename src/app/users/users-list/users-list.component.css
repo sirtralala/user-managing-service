@@ -1,0 +1,119 @@
+.searchfield {
+    min-width: 13.6rem;
+    height: 1.5rem;
+    font-size: .8rem;
+    padding-left: .4rem;
+    margin-bottom: 1rem;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.searchfield-darkmode {
+    color: white;
+    background-color: rgb(75, 75, 75);
+    border-color: white;
+}
+
+.searchfield-darkmode::placeholder {
+    color: white;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder, /* Internet Explorer 10-11 */
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+}
+
+table {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.table-darkmode {
+    border-color: white;
+}
+
+th, td {
+    min-width: 4rem;
+    padding: 5px 0px 5px 5px;
+}
+
+tr {
+    background-color: rgb(228, 228, 228);
+}
+
+.tr-darkmode {
+    background-color: rgb(75, 75, 75);
+}
+
+tr:nth-child(2n) {
+    background-color: white;
+}
+
+.tr-darkmode:nth-child(2n) {
+    background-color: black;
+}
+
+.th__content {
+    display: flex;
+}
+
+.th__title {
+    letter-spacing: .1em;
+}
+
+button,
+.th__buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.button__visible {
+    visibility: visible;
+}
+
+.button__not-visible {
+    visibility: hidden;
+}
+
+.th__buttons > button:not(:first-child),
+.td__buttons > button:not(:first-child) {
+    margin-left: .2rem;
+}
+
+.th__add-user {
+    margin-right: auto;
+    padding: 1.5px 9px;
+}
+
+button {
+    max-width: 35%;
+    border-color: transparent;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.td__buttons {
+    display: flex;
+    justify-content: flex-start;
+}
+
+@media only screen and (max-width: 710px) {
+    .searchfield {
+        width: 30.6rem;
+    }
+
+    .th__content {
+        flex-direction: column;
+    }
+
+    .th__buttons {
+        position: relative;
+    }
+
+    .th__add-user {
+        position: absolute;
+        top: 100%;
+        right: 65%;
+    }
+}

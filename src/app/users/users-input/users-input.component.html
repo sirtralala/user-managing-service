@@ -1,0 +1,32 @@
+<div *ngIf="user">
+    <h2>{{ user.id ? 'Edit User' : 'Add User' }}</h2>
+    <p *ngIf="user.id">
+        <label for="id">ID:</label>
+        <input type="number" [value]="user.id" id="id" [ngClass]="{'input-darkmode': darkmode }" readonly>
+    </p>
+
+    <p>
+        <label for="firstname">First name:</label>
+        <input [(ngModel)]="user.firstName" [ngClass]="{'input-darkmode': darkmode }" id="firstname">
+    </p>
+
+    <p>
+        <label for="lastname">Last name:</label>
+        <input [(ngModel)]="user.lastName" [ngClass]="{'input-darkmode': darkmode }" id="lastname">
+    </p>
+
+    <p>
+        <label for="birthdate">Birthdate:</label>
+        <input type="date" [(ngModel)]="user.birthdate" [ngClass]="{'input-darkmode': darkmode }" id="birthdate">
+    </p>
+
+    <p>
+        <label for="active">Active?</label>
+        <input [(ngModel)]="user.active" type="checkbox" [ngClass]="{'input-darkmode': darkmode }" id="active">
+    </p>
+
+    <p>
+        <button class="button-input" (click)="finishWithOk()" [ngClass]="{'button-darkmode': darkmode }">OK</button>
+        <button class="button-input" (click)="finishWithCancel()" [ngClass]="{'button-darkmode': darkmode }">Cancel</button>
+    </p>
+</div>

@@ -1,0 +1,38 @@
+div {
+    margin-left: 2rem;
+}
+
+h2 {
+    text-align: left;    
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+    vertical-align: top;
+}
+
+#active,
+button {
+    cursor: pointer;
+}
+
+button:not(:first-child) {
+    margin-left: .5rem;
+}
+
+.button-darkmode,
+.input-darkmode {
+    color: white;
+    background-color: rgb(75, 75, 75);
+}
+
+#birthdate {
+    width: 10rem;
+}
+
+@media only screen and (max-width: 1010px) {
+    div {
+        margin: 2rem 0 0 0;
+    }
+}

@@ -1,0 +1,14 @@
+h1 {
+    text-align: center;
+}
+
+.content-users {
+    display: flex;
+    min-width: 500px;
+}
+
+@media only screen and (max-width: 1010px) {
+    .content-users {
+        flex-direction: column;
+    }
+}

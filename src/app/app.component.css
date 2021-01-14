@@ -1,0 +1,67 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    margin: 4rem 0;
+}
+
+.darkmode {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+.darkmode__btn {
+    padding: .5rem;
+    background-color: rgb(228, 228, 228);
+    border: none;
+    border-radius: .3rem;
+    box-shadow: .3rem .3rem .5rem rgb(192, 192, 192);
+    cursor: pointer;
+    transform: scale(1);
+    transition: all .05s;
+}
+
+.darkmode__btn--dark {
+    color: white;
+    background-color: rgb(75, 75, 75);
+    border: 1px solid white;
+    box-shadow: .3rem .3rem .5rem rgb(97, 97, 97);
+}
+
+.darkmode__btn:hover {
+    transform: scale(1.03);
+    box-shadow: .4rem .4rem .5rem rgb(192, 192, 192);
+}
+
+.darkmode__btn--dark:hover {
+    box-shadow: .4rem .4rem .5rem rgb(97, 97, 97);
+}
+
+.darkmode__btn:focus {
+    outline: none;
+}
+
+.darkmode__btn:active {
+    transform: scale(.97);
+    box-shadow: .2rem .2rem .3rem rgb(192, 192, 192);
+}
+
+.darkmode__btn--dark:active {
+    box-shadow: .2rem .2rem .3rem rgb(97, 97, 97);
+}

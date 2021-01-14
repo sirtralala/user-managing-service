@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<input type="search" class="searchfield" [(ngModel)] = searchText placeholder="Search...">
+
+<table>
+  <thead>
+    <th>
+      <div class="th__content">
+        <div class="th__title">ID</div>
+        <div class="th__buttons">
+          <button (click)='sort("id", "asc", 1)' [ngClass]="[activeSortArrow == 1 ? 'button__not-visible' : 'button__visible']">
+            <i class="fa fa-arrow-up"></i>
+          </button>
+          <button (click)='sort("id", "desc", 2)' [ngClass]="[activeSortArrow == 2 ? 'button__not-visible' : 'button__visible']">
+            <i class="fa fa-arrow-down"></i>
+          </button>
+        </div>
+      </div>
+    </th>
+    <th>
+      <div class="th__content">
+        <div class="th__title">First name</div>
+        <div class="th__buttons">
+          <button class="asc" (click)='sort("firstname", "asc", 3)' [ngClass]="[activeSortArrow == 3 ? 'button__not-visible' : 'button__visible']">
+            <i class="fa fa-arrow-up"></i>
+          </button>
+          <button class="desc" (click)='sort("firstname", "desc", 4)' [ngClass]="[activeSortArrow == 4 ? 'button__not-visible' : 'button__visible']">
+            <i class="fa fa-arrow-down"></i>
+          </button>
+        </div>
+      </div>
+    </th>
+    <th>
+      <div class="th__content">
+        <div class="th__title">Last name</div>
+        <div class="th__buttons">
+          <button class="asc" (click)='sort("lastname", "asc", 5)' [ngClass]="[activeSortArrow == 5 ? 'button__not-visible' : 'button__visible']">
+            <i class="fa fa-arrow-up"></i>
+          </button>
+          <button class="desc" (click)='sort("lastname", "desc", 6)' [ngClass]="[activeSortArrow == 6 ? 'button__not-visible' : 'button__visible']">
+            <i class="fa fa-arrow-down"></i>
+          </button>
+        </div>
+      </div>
+    </th>
+    <th>
+      <div class="th__content">
+        <div class="th__title">Birthdate</div>
+        <div class="th__buttons">
+          <button class="asc" (click)='sort("birthdate", "asc", 7)' [ngClass]="[activeSortArrow == 7 ? 'button__not-visible' : 'button__visible']">
+            <i class="fa fa-arrow-up"></i>
+          </button>
+          <button class="desc" (click)='sort("birthdate", "desc", 8)' [ngClass]="[activeSortArrow == 8 ? 'button__not-visible' : 'button__visible']">
+            <i class="fa fa-arrow-down"></i>
+          </button>
+        </div>
+      </div>
+    </th>
+    <th>
+      <div class="th__content">
+        <div class="th__title">Active</div>
+        <div class="th__buttons">
+          <button class="asc" (click)='sort("active", "asc", 9)' [ngClass]="[activeSortArrow == 9 ? 'button__not-visible' : 'button__visible']">
+            <i class="fa fa-arrow-up"></i>
+          </button>
+          <button class="desc" (click)='sort("active", "desc", 10)' [ngClass]="[activeSortArrow == 10 ? 'button__not-visible' : 'button__visible']">
+            <i class="fa fa-arrow-down"></i>
+          </button>
+        </div>
+      </div>
+    </th>
+    <th>
+      <div class="th__content">
+        <div class="th__buttons">
+          <button class="th__add-user" (click)="addUser()"><i class="fa fa-user-plus"></i></button>
+        </div>
+      </div>
+    </th>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let user of userList | filter: searchText" [ngClass]="{'tr-darkmode': darkmode }">
+      <td> {{ user.id }} </td>
+      <td> {{ user.firstName }} </td>
+      <td> {{ user.lastName }} </td>
+      <td> {{ user.birthdate | date: 'dd.MM.yyyy' }} </td>
+      <td><input type="checkbox" disabled="disabled" [(ngModel)]="user.active"></td>
+      <td>
+        <div class="td__buttons">
+          <button (click)="editUser(user)"><i class="fa fa-edit"></i></button>
+          <button (click)="deleteUser(user)"><i class="fa fa-user-times"></i></button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
