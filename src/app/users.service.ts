@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from './types';
 
-const NEWS_RESOURCE_URL = 'http://localhost:8080/resources/user';
+// const NEWS_RESOURCE_URL = 'http://localhost:8080/resources/user';
+const NEWS_RESOURCE_URL = 'https://intense-dusk-98645.herokuapp.com/resources/user';
 
 @Injectable({
   providedIn: 'root'
